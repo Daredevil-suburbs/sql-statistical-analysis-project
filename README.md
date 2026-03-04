@@ -190,7 +190,7 @@ git clone https://github.com/Daredevil-suburbs/sql-statistical-analysis-project.
 ### 2. Install Python dependencies
 
 ```
-pip install pandas matplotlib seaborn
+pip install -r requirements.txt
 ```
 
 ### 3. Run the analysis
