@@ -219,6 +219,18 @@ This project demonstrates how SQL can be used to:
 Combining SQL with Python enables both **data querying and visualization in a complete data analysis workflow**.
 
 ---
+## Visualizations
+
+### Transaction Amount Distribution
+![Amount Distribution](results/charts/amount_distribution.png)
+
+### Customer Age vs Transaction Amount
+![Age vs Amount](results/charts/age_vs_amount.png)
+
+### Outlier Detection
+![Outliers](results/charts/outliers.png)
+
+---
 
 ## Author
 
