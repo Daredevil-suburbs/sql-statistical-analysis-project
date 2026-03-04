@@ -1,15 +1,25 @@
 # 📊 SQL Statistical Analysis Project
 
-## Overview
-
-This project demonstrates how **SQL and Python can be used together for statistical analysis of transactional data**.
-The workflow includes data storage in PostgreSQL, statistical querying using SQL, and visualization using Python.
-
-The goal of the project is to showcase common **data analysis techniques used by data analysts and data scientists**.
+Python | SQL | PostgreSQL | Data Analysis | Visualization
 
 ---
 
-## Project Structure
+## 📌 Overview
+
+This project demonstrates how **SQL and Python can be used together for statistical analysis of transactional data**.
+
+The workflow includes:
+
+1. Storing data in **PostgreSQL**
+2. Performing **statistical analysis using SQL**
+3. Exporting results
+4. Creating **data visualizations using Python**
+
+The goal of this project is to showcase **common data analysis techniques used by data analysts and data scientists**.
+
+---
+
+## 🗂 Project Structure
 
 ```
 sql-statistical-analysis-project
@@ -40,29 +50,30 @@ sql-statistical-analysis-project
 ├── analysis
 │   └── analysis.py
 │
+├── requirements.txt
 └── README.md
 ```
 
 ---
 
-## Dataset
+## 📂 Dataset
 
-The dataset contains synthetic customer transaction data with the following columns:
+The dataset contains **synthetic customer transaction data** used to demonstrate statistical analysis.
 
-| Column            | Description                        |
-| ----------------- | ---------------------------------- |
-| transaction_id    | Unique ID for each transaction     |
-| customer_age      | Age of the customer                |
-| amount            | Transaction amount                 |
-| days_since_signup | Days since the customer registered |
+| Column            | Description                                  |
+| ----------------- | -------------------------------------------- |
+| transaction_id    | Unique transaction identifier                |
+| customer_age      | Age of the customer                          |
+| amount            | Transaction amount                           |
+| days_since_signup | Number of days since the customer registered |
 
 ---
 
-## Statistical Analysis Performed
+## 📈 Statistical Analysis Performed
 
 ### 1️⃣ Descriptive Statistics
 
-Measures the central tendency and spread of transaction amounts.
+Calculates measures of central tendency and spread.
 
 Metrics calculated:
 
@@ -70,13 +81,14 @@ Metrics calculated:
 * Median
 * Standard Deviation
 * Variance
-* Minimum & Maximum
+* Minimum
+* Maximum
 
 ---
 
 ### 2️⃣ Percentile Analysis
 
-Used to understand the distribution of transaction amounts.
+Percentiles help understand how data is distributed.
 
 Calculated percentiles:
 
@@ -89,31 +101,31 @@ Calculated percentiles:
 
 ### 3️⃣ Outlier Detection
 
-Outliers are detected using the **Interquartile Range (IQR)** method.
-
-Formula:
+Outliers are detected using the **Interquartile Range (IQR) method**.
 
 ```
 Lower Bound = Q1 − 1.5 × IQR
 Upper Bound = Q3 + 1.5 × IQR
 ```
 
+Transactions outside this range are flagged as potential anomalies.
+
 ---
 
 ### 4️⃣ Correlation Analysis
 
-Examines relationships between variables using Pearson correlation.
+Correlation helps measure relationships between variables.
 
 Relationships analyzed:
 
 * Transaction amount vs customer age
-* Transaction amount vs customer tenure
+* Transaction amount vs days since signup
 
 ---
 
 ### 5️⃣ Frequency Distribution
 
-Transaction amounts are grouped into ranges to understand spending patterns.
+Transaction amounts are grouped into ranges to analyze spending patterns.
 
 Example ranges:
 
@@ -129,7 +141,7 @@ Example ranges:
 
 ### 6️⃣ Z-Score Analysis
 
-Used to measure how far each transaction amount deviates from the mean.
+Z-score shows how far a transaction amount is from the mean.
 
 Formula:
 
@@ -137,13 +149,13 @@ Formula:
 Z = (X − μ) / σ
 ```
 
-This helps identify unusual transactions.
+Higher absolute Z-scores indicate unusual transactions.
 
 ---
 
-## Data Visualization
+## 📊 Data Visualizations
 
-Python was used to create visual insights from the dataset.
+Python was used to generate charts for better understanding of the dataset.
 
 Libraries used:
 
@@ -151,25 +163,24 @@ Libraries used:
 * matplotlib
 * seaborn
 
-Generated charts include:
-
 ### Transaction Amount Distribution
 
-Histogram showing how transaction amounts are distributed.
+![Distribution](results/charts/amount_distribution.png)
 
-### Age vs Transaction Amount
+### Customer Age vs Transaction Amount
 
-Scatter plot showing how spending varies with age.
+![Age vs Amount](results/charts/age_vs_amount.png)
 
 ### Outlier Detection
 
-Boxplot used to visualize extreme values.
+![Outliers](results/charts/outliers.png)
 
 ---
 
-## Technologies Used
+## 🛠 Technologies Used
 
-* SQL (PostgreSQL)
+* SQL
+* PostgreSQL
 * Python
 * Pandas
 * Matplotlib
@@ -179,7 +190,7 @@ Boxplot used to visualize extreme values.
 
 ---
 
-## How to Run the Project
+## ▶️ How to Run the Project
 
 ### 1. Clone the repository
 
@@ -187,11 +198,21 @@ Boxplot used to visualize extreme values.
 git clone https://github.com/Daredevil-suburbs/sql-statistical-analysis-project.git
 ```
 
-### 2. Install Python dependencies
+Move into the project directory:
+
+```
+cd sql-statistical-analysis-project
+```
+
+---
+
+### 2. Install dependencies
 
 ```
 pip install -r requirements.txt
 ```
+
+---
 
 ### 3. Run the analysis
 
@@ -199,7 +220,7 @@ pip install -r requirements.txt
 python analysis/analysis.py
 ```
 
-Charts will be generated in:
+Charts will automatically be generated in:
 
 ```
 results/charts
@@ -207,31 +228,21 @@ results/charts
 
 ---
 
-## Key Insights
+## 🔎 Key Insights
 
-This project demonstrates how SQL can be used to:
-
-* Perform statistical analysis directly in databases
-* Identify outliers and unusual data
-* Understand data distributions
-* Analyze correlations between variables
-
-Combining SQL with Python enables both **data querying and visualization in a complete data analysis workflow**.
-
----
-## Visualizations
-
-### Transaction Amount Distribution
-![Amount Distribution](results/charts/amount_distribution.png)
-
-### Customer Age vs Transaction Amount
-![Age vs Amount](results/charts/age_vs_amount.png)
-
-### Outlier Detection
-![Outliers](results/charts/outliers.png)
+* The dataset shows variation in transaction amounts across customers.
+* Some transactions appear as **outliers**, indicating unusually high spending.
+* Correlation analysis suggests limited relationship between age and transaction amount.
+* Frequency distribution helps visualize customer spending behavior.
 
 ---
 
-## Author
+## 👨‍💻 Author
 
 Daredevil Suburbs
+
+---
+
+## ⭐ If you found this project useful
+
+Consider giving the repository a **star on GitHub**.
